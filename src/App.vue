@@ -1,10 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+<div>
+  <b-button size="sm" @click="toggle">
+    {{ show ? 'Hide' : 'Show' }} Alert
+  </b-button>
+  <b-alert
+    v-model="show"
+    class="mt-3"
+    dismissible
+    @dismissed="dismissed"
+  >
+    Hello {{ name }}!
+  </b-alert>
+</div>
   </div>
 </template>
 
